@@ -1,0 +1,10 @@
+{% extends "BlogCitas/layout.html" %}
+{% load static %}
+{% block body %}
+
+    <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+    <p>{{ post.fecha }}</p>
+    <p>{{ post.creador }}</p>
+    <p>{{ post.contenido|safe }}</p>
+    
+{% endblock %}

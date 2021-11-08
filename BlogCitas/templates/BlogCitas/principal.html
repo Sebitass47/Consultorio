@@ -1,0 +1,23 @@
+{% extends "BlogCitas/layout.html" %}
+{% load static %}
+{% block body %}
+    <header>
+        {% for promocion in promociones %}
+        <div class="promociones">
+            <img src="{{ promocion.imagen.url }}" alt="{{image.promocion}}">
+        {% empty %}
+            <h1>No results found</h1>
+        </div>
+        {% endfor %}
+    </header>
+
+
+    {% for post in posts %}
+        <div class="posts-previsulizaion"><a href="{% url 'post' post.id %}">
+            <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+            <h4>{{ post.titulo }}</h4>
+        </a></div>
+    {% endfor %}
+    <a href="{% url 'blog'%}">Ver todas las publicaciones</a>
+
+{% endblock %}

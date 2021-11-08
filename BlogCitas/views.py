@@ -2,7 +2,6 @@ from django.core import paginator
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import *
-
 # Create your views here.
 
 def principal(request):
@@ -28,4 +27,8 @@ def post(request, post_id):
     })
 
 
+def acerca_de(request):
+    return render(request, 'BlogCitas/acerca_de.html')
 
+def citas(request):
+    return render(request, 'BlogCitas/citas.html')
