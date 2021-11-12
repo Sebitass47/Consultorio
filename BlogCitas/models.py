@@ -16,7 +16,7 @@ class Paciente(models.Model):
     historial = tinymce_models.HTMLField(blank=True)
 
     def __str__(self):
-        return f"Nombre del paciente: {self.nombre} Correo: {self.content}"
+        return f"Nombre del paciente: {self.nombre} Correo: {self.correo}"
 
 
 class Post(models.Model):
@@ -45,3 +45,10 @@ class Citas(models.Model):
 
     def __str__(self):
         return f"El paciente {self.paciente} tiene cita el día {self.fecha} a las {self.hora}"
+
+
+class HorariosTrabajo(models.Model):
+    hora = models.TimeField()
+
+    def __str__(self):
+        return f"Horario de cita: {self.hora}"
