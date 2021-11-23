@@ -24,15 +24,9 @@ def registro(request):
 
 
 def horarios(request, fecha):
-
-
         try:
-            print(1)
-            print(horario(fecha))
             return JsonResponse({"horarios": horario(fecha)}, status=200)
-            
-        except:
-            print(3)
+        except :
             return JsonResponse({"error": "Algo salió mal, intente más tarede"}, status=400)
     
     

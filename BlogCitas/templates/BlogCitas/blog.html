@@ -1,15 +1,19 @@
 {% extends "BlogCitas/layout.html" %}
 {% load static %}
 {% block body %}
-
+<div class="posts">
     {% for post in page_obj %}
-    <div class="posts-previsulizaion"><a href="{% url 'post' post.id %}">
-        <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
-        <h4>{{ post.titulo }}</h4>
+    <div class="posts-previsualizacion"><a href="{% url 'post' post.id %}">
+      <div class="imagen-card">
+          <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}">
+      </div>
+      <div class="card-cuerpo">
+          <h4>{{ post.titulo }}</h4>
+      </div>
     </a></div>
     {% endfor %}
-
-    <nav  aria-label="Page navigation example">
+  </div>
+    <nav  class="paginas" aria-label="Page navigation example">
         <ul class="pagination justify-content-center" class="step-links">
             {% if page_obj.has_previous %}
               <li class="page-item"><a href="?page=1" class="page-link">&laquo;&laquo;</a></li>
@@ -26,5 +30,6 @@
             {% endif %}
           </ul>
       </nav>
+   
 
 {% endblock %}

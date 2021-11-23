@@ -1,3 +1,220 @@
-/* .body{
-    margin-top: 50px;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;400;600&display=swap');
+body{
+    
+}
+
+nav{
+    font-family: 'Montagu Slab', serif;
+}
+
+footer{
+    font-family: 'Montagu Slab', serif;
+}
+
+.body{
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: 'Montagu Slab', serif;
+    min-height: 100vh;
+}
+
+header{
+    margin-top: 20px;
+}
+
+.carousel-item{
+    overflow: hidden;
+    max-height: 550px;
+    border-radius: 10px;
+}
+
+.carousel-item img{
+    display:block;
+    object-fit: cover;
+    width: 100%;
+}
+
+.posts{
+    margin-top: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.imagen-card{
+    height: 150px;
+    overflow: hidden;
+}
+
+.imagen-card img{
+    width: 100%;
+    display: block;
+}
+
+.posts-previsualizacion a{
+    text-decoration: none;
+    color: #2E1F1F;
+    
+}
+
+.card-cuerpo{
+    border-bottom: 1px solid rgb(209, 208, 208);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+.post{
+    padding: 20px;
+    background-color:#EAE7E7;
+    width: 75%;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.portada-post img{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 50%;
+}
+
+.mapa{
+    width: 100%;
+}
+
+.mapa iframe{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.historia p{
+    overflow: hidden;
+}
+
+.historia img{
+    float: left;
+    margin-right: 20px;
+    width: 650px;
+}
+
+.mision img{
+    margin-left: 20px;
+    float:right;
+    width: 650px;
+}
+
+
+.citas{
+    display:flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer{
+    margin-top: 20px;
+    background-color: #EAE7E7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+
+}
+
+.paginas{
+    margin-top: 20px;
+}
+@media screen and (max-width: 810px){
+    .body{
+        font-family: 'Montagu Slab', serif;
+        
+        
+    }
+
+    .historia img{
+        width: 100%;
+        margin-bottom: 20px;
+
+    }
+    
+    .mision img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .carousel-item{
+        overflow: hidden;
+        height: 500px;
+        border-radius: 10px;
+    }
+    
+    .carousel-item img{
+        display:block;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .portada-post img{
+        display:block;
+        margin-left: auto;
+        margin-right:auto;
+        width: 75%;
+    }
+
+    .post{
+        padding: 20px;
+        background-color:#EAE7E7;
+        width: 100%;
+        margin-left: auto;
+        margin-right:auto;
+
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    .posts{
+        margin-top: 20px;
+        display:grid;
+        grid-template-columns: repeat(auto-fill, 100%);
+        gap: 20px;
+        grid-auto-flow: dense;
+    }
+
+    .portada-post img{
+        display:block;
+        margin-left: auto;
+        margin-right:auto;
+        width: 100%;
+    }
+
+    .post{
+        padding: 20px;
+        background-color:#EAE7E7;
+        width: 100%;
+        
+    }
+    header{
+        margin-top: 0px;
+    }
+    
+}
+
+
+
+
+
+
+

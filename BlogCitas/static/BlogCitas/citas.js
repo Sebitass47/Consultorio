@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (element.id === "primera_cita"){
             form_registro.style.display = "block";
             form_cita.style.display = "none";
+            horario_cita.style.display = "none";
             registro();
         }
         else if (element.id === "paciente_recurrente"){

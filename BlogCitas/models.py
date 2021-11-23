@@ -20,7 +20,7 @@ class Paciente(models.Model):
 
 
 class Post(models.Model):
-    titulo = models.CharField(max_length=50)
+    titulo = models.CharField(max_length=100)
     contenido = tinymce_models.HTMLField()
     imagen = models.ImageField(upload_to="imagenes")
     creador = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="posts_doctor")

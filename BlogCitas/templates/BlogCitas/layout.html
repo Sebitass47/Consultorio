@@ -13,7 +13,7 @@
     </head>
 </html>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'principal' %}">Consultorio</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,15 +25,15 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'acerca_de' %}">Acerca de</a>
+                <a class="nav-link active" href="{% url 'acerca_de' %}">Acerca de</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Citas
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="{% url 'citas' %}">Agendar cita</a></li>
-                  <li><a class="dropdown-item" href="{% url 'eliminar_cita' %}">Cancelar cita</a></li>
+                  <li><a class="dropdown-item" href="{% url 'eliminar_cita' %}">Horario/Cancelar cita</a></li>
                 </ul>
               </li>
             </ul>
@@ -53,6 +53,9 @@
     </section>
 
     <footer>
+      <div>
         &copy; Página hecha por Sebastián de la Rosa.
+      </div>
+        
     </footer>
 </body>

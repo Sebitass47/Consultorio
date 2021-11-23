@@ -3,65 +3,71 @@
 {% block body %}
     <div id="alert-success" class="alert alert-success" role="alert"></div>
     <div id="alert-danger" class="alert alert-danger" role="alert"></div>
-    <button id="primera_cita">Primera cita</button>
-    <button id="paciente_recurrente">Paciente recurrente</button>
+    <div class="citas">
+        <div class="buttons">
+            <button id="primera_cita" class="btn btn-primary">Primera cita</button>
+            <button id="paciente_recurrente" class="btn btn-primary">Paciente recurrente</button>
+        </div>
+        <div class="formularios">
+            <form id="registro">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input class="form-control" id="nombre" type="text" name="nombre" placeholder="ej: Juan Perez Lopez" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input class="form-control" id="fecha_nacimiento" type="date" name="fecha_nacimiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="genero">Genero</label>
+                    <select class="form-control"  name="genero" id="genero" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Genero Fluido</option>
+                    </select>
+                </div>
+                <div class="wrapper">
+                    <input type="submit" class="btn btn-success">
+                </div>
+            </form>
 
-    <form id="registro">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="nombre">Nombre completo</label>
-            <input class="form-control" id="nombre" type="text" name="nombre" placeholder="ej: Juan Perez Lopez" required>
-        </div>
-        <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input class="form-control" id="correo" type="email" name="correo" placeholder="ejemplo@gmail.com" required>
-        </div>
-        <div class="form-group">
-            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-            <input class="form-control" id="fecha_nacimiento" type="date" name="fecha_nacimiento" required>
-        </div>
-        <div class="form-group">
-            <label for="genero">Genero</label>
-            <select class="form-control"  name="genero" id="genero" required>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Genero Fluido</option>
-            </select>
-        </div>
-        <input type="submit">
-    </form>
 
-
-    <form action="{% url 'nueva_cita' %}" method="post">
-        {% csrf_token %}
-        <div id="fecha-cita">
-            <div class="form-group">
-                <label for="correo">Correo electrónico con el que se registro</label>
-                <input class="form-control" id="correo_registrado" type="email" name="correo" placeholder="ejemplo@gmail.com" required>
-            </div>
-            <div class="form-group">
-                <label for="fecha_cita">Elige la fecha en la que desea su cita</label>
-                <select class="form-control"  name="feha_cita" id="fecha_cita" required >
-                        <option disabled selected="true">Escoge una fecha</option>
-                    {% for fecha in fechas %}
-                        <option value="{{ fecha.fecha_numerica }}">{{ fecha.fecha_usuario }}</option>
-                    {% endfor %}   
-                </select>  
-            </div>
+            <form action="{% url 'nueva_cita' %}" method="post">
+                {% csrf_token %}
+                <div id="fecha-cita">
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico con el que se registro</label>
+                        <input class="form-control" id="correo_registrado" type="email" name="correo" placeholder="ejemplo@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_cita">Elige la fecha en la que desea su cita</label>
+                        <select class="form-control"  name="feha_cita" id="fecha_cita" required >
+                                <option disabled selected="true">Escoge una fecha</option>
+                            {% for fecha in fechas %}
+                                <option value="{{ fecha.fecha_numerica }}">{{ fecha.fecha_usuario }}</option>
+                            {% endfor %}   
+                        </select>  
+                    </div>
+                </div>
+                <div id="horario-cita" >
+                    <div class="form-group">
+                        <label for="horario_cita">Horarios disponibles</label>
+                        <select class="form-control" name="horario_cita" id="horario_cita" required >
+                            <option disabled="disabled" selected="true">Escoge una cita</option>
+                        </select>
+                    </div>   
+                    <div class="wrapper">
+                        <input type="submit" class="btn btn-success">
+                    </div>
+                </div>
+            </form>
         </div>
-        <div id="horario-cita" >
-            <div class="form-group">
-                <label for="horario_cita">Horarios disponibles</label>
-                <select class="form-control" name="horario_cita" id="horario_cita" required >
-                    <option disabled="disabled" selected="true">Escoge una cita</option>
-                </select>
-            </div>   
-            <div class="form-group">
-                <input type="submit">
-            </div>
-        </div>
-    </form>
-    
+    </div>
     
             
     
