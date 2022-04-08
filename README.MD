@@ -1,31 +1,45 @@
 # CONSULTORIO
 
-## Demostración
+## Demo
 [Video](https://youtu.be/9JeWVEp5E6g)
 
-## Distinctiveness and Complexity: 
-Este proyecto es una aplicación web para una clínica médica , en donde además de poder agender tu cita, eliminarla y consultar el horario los doctores puede publicar articulos de la salud, consultar el historial de sus pacientes y ver las citas agendadas. Se utilizó Django para el Backend y Javascript puro para Front End, que es lo que piden en los requerimientos del proyecto, para comunicarse una con la otra hace uso de API'S, además se hace uso de HTML, CSS y Bootstrap.
+## What is it?
+It is an application designed for a medical clinic, in which patients can read health posts published by doctors, learn more about the clinic (where it is, mission, vision, history), schedule appointments, check their appointment time, or cancel your appointment.
+Doctors can publish articles or posts on health issues, format it, adding images, links, fonts ...
+Also making use of the / admin page that django provides you can review and modify the history of their patients, review the appointments they have and modify work hours.
 
-### ¿Qué contienen las carpetas?
 
-**BlogCitas** contiene el código principal de nuestra aplicación web.
-En el archivo views.py están todas las rutas a las que el usuario puede acceder, como por ejemplo: "principal, blog, post, acerca_de, citas, nueva_cita y eliminar_cita". 
-En el archivo **api.py** se encuentran todas las rutas que se usan para que el Front end obtenga información, como "registro y horarios". 
+## Why?
+The idea for this project came about because I have a friend who is studying nutrition, and when I finished her degree she wants to set up her own practice, and every good practice has to have its own web application.
 
-En **funciones.py** se encuentran 2 funciones que podrían haber estado incluidas en api.py y views.py, pero por motivos de organización decidí ponerlos en un archivo diferente. 
+# Distinctiveness and complexity:
 
-En **models.py** se encuentran los modelos necesarios para crear la base de datos, que en este caso es sqlite, pero facilmente podría ser reemplazada por MySQL. 
-En la carpeta **templates** estan todos los archivos html que se utilizan, y en la carpeta **static** se encuentra el archivo css y los 3 archivos de javascript. 
+Among the technologies it uses are: Django (Python), SQL, Javascript, HTML, CSS and Bootstrap.
+It is a complete web application, with a responsive design, and capable of storing patients, appointment times, posts and promotions. Larger than previous projects.
+All the code is organized so that it is easy to edit.
 
-**media** contiene todas las fotos que se usan en la interfaz, se usa sqlite para organizarlas y cada que publicas nuevos articulos, se van guardando en la carpeta.
+### What’s contained in each file you created
 
-**Consultorio** es el archivo que crea Django al iniciar el proyecto, modifique el archivo "settings.py" y "urls.py"
+**BlogCitas** contains the main code of our web application.
+In the views.py file are all the paths that the user can access, such as: "main, blog, post, about_from, citations, new_date and delete_date".
 
-###¿Qué modulos adiconales se usan para el proyecto?
+In the file **api.py** you will find all the routes that are used for the Front end to obtain information, such as "registration and schedules".
+
+In **functions.py** there are 2 functions that could have been included in api.py and views.py, but for organizational reasons I decided to put them in a different file.
+
+In **models.py** you will find the necessary models to create the database, which in this case is sqlite, but it could easily be replaced by MySQL.
+
+In the ** templates** folder there are all the html files that are used, and in the ** static ** folder there are the css file and the 3 javascript files.
+
+**media** contains all the photos that are used in the interface, sqlite is used to organize them and every time you post new articles, they are saved in the folder.
+
+**Consultorio** is the folder that Django creates when starting the project, modifies the file "settings.py" and "urls.py"
+
+### What additional modules are used for the project?
 tinymce
-PIL
+pillow
 
-### ¿Como ejecutar la aplicación?
-Despues de instalar los módulos puestos en requeriments.txt, debe hacer las migraciones de la base de datos, con los comandos: *python manage.py makemigrations*, y posteriormente *python manage.py migrate*. Después solo basta con ejecutar *pyhton manage.py runserver* para que poder acceder a la aplicación.
+### How to run your application
 
-También necesitará crear un entorno virtual, para poner la SECRET_KEY en una variable de entorno y que este más segura. En nombre de la variable debe ser SECRET_KEY.
+You must open a terminal, and go to the path where you downloaded the project, execute the command `pip install -r requirements.py`. After installing the modules set in requirements.txt, you must perform the database migrations, with the commands: `python manage.py makemigrations`, and then `python manage.py migrate`. After that, just run `pyhton manage.py runserver` to access the app.
+
